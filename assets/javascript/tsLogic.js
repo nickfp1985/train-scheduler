@@ -38,16 +38,16 @@ $(document).ready(function() {
     let train = value.trainName;
     let destination = value.destination;
     let frequency = value.frequency;
-    let firstTrainTime = value.firstTrainTime;
+    let firstTrain = value.firstTrain;
 
     // convert first train time into minutes
-    let firstTrainTimeMinutes = moment(firstTrainTime,"HH:mm").format('mm'); // cut out the military time minutes
-    let firstTrainTimeHour = moment(firstTrainTime,"HH:mm").format('hh');  // cut out the military time hours
+    let firstTrainTimeMinutes = moment(firstTrain,"HH:mm").format('mm'); // cut out the military time minutes
+    let firstTrainTimeHour = moment(firstTrain,"HH:mm").format('hh');  // cut out the military time hours
     let convertHoursToMinutes = firstTrainTimeHour * 60;  // convert hours into minutes
     let firstTrainMinutesPastMidnight = parseInt(convertHoursToMinutes) + parseInt(firstTrainTimeMinutes);  // add converted hours + minutes
 
     console.log(train + " = TRAIN NAME");
-    console.log(firstTrainTime + " = DEPARTS AT")
+    console.log(firstTrain + " = DEPARTS AT")
     console.log(firstTrainMinutesPastMidnight + " = first train time after midnight");
 
     // time now converted into minutes
